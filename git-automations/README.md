@@ -62,7 +62,7 @@ the command.
 However, to avoid having to type the full command, we can create an alias command that is short and 
 easy to remember, and we will call it `run-git`
 ```
-echo "alias rgit='git-automations'" >> ~/.bashrc
+echo "alias rgit='git-automation.sh'" >> ~/.bashrc
 ```
 
 ### Using Git Automations

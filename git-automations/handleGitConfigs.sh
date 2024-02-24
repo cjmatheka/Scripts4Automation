@@ -20,6 +20,7 @@ configure_git_identity() {
     fi
 }
 
+# Main function to check and configure Git
 check_and_configure_git() {
     # Check if user.name and user.email are configured globally
     CONFIGURED_USERNAME=$(git config --global user.name)
@@ -28,21 +29,6 @@ check_and_configure_git() {
     # Check if configurations match your desired identity
     if [ "$CONFIGURED_USERNAME" != "$GIT_USERNAME" ] || [ "$CONFIGURED_EMAIL" != "$GIT_EMAIL" ];
     then
-        echo "Git not configured. Configuring now with the following"
-        echo "Username: $GIT_USERNAME"
-        echo "Email: $GIT_EMAIL"
-        configure_git_identity
-    fi
-}
-
-# Main function to check and configure Git
-check_and_configure_git() {
-    # Check if user.name and user.email are configured globally
-    CONFIGURED_USERNAME=$(git config --global user.name)
-    CONFIGURED_EMAIL=$(git config --global user.email)
-
-    # Check if configurations match your desired identity
-    if [ "$CONFIGURED_USERNAME" != "$GIT_USERNAME" ] || [ "$CONFIGURED_EMAIL" != "$GIT_EMAIL" ]; then
         echo "Git not configured. Configuring now with the following:"
         echo "Username: $GIT_USERNAME"
         echo "Email: $GIT_EMAIL"

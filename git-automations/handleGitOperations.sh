@@ -9,8 +9,9 @@ perform_git_operations() {
   # Get the current directory name
   response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$CURRENT_REPO_NAME")
 
-  if [ ! $response -ne 404 ];
+  if [ "$response" -eq 404 ];
   then
+    echo "$response"
     echo "Repository $REPO_NAME does not exist on GitHub."
     echo "Creating one now...."
     # Create the repository using the GitHub API
