@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Assign environmental variables to local variables
 GITHUB_TOKEN="$GITHUB_TOKEN"
@@ -21,16 +21,14 @@ main() {
   # Check if the .git directory exists
   if [ "$ACTION" = "create" ];
   then
-    echo "Let us create a new repository for you"
-    echo "You will be asked for a repo name"
+    echo "Creating a new repository..."
     check_and_configure_git
     create_github_repo
 
   elif [ "$ACTION" = "update" ];
   then
-    echo "Relax, allow me to commit and push your changes"
-    echo "But first, lets cross-check if this a git repo..."
-    echo "Checking if its a repo...."
+    echo "Checking if its a repository..."
+    echo "Adding, commiting, and pushing changes"
     checkGitRepo
     perform_git_operations
 
@@ -41,7 +39,7 @@ main() {
     removeRepoDir
 
   else
-    echo "Invalid command argument provided"
+    echo "Invalid command argument provided..."
     echo "Specify either 'create' to create a new repo or 'update' to update your changes"
   fi
 }

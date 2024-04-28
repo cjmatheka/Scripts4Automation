@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Function to check if Git is configured with the desired identity
 configure_git_identity() {

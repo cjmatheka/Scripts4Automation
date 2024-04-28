@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 create_github_repo() {
   # Checking whether current folder is a gig repository

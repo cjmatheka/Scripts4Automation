@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 checkGitRepo() {
   # First, we check if folder or any parent folder in its path is a git repo
