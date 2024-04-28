@@ -43,6 +43,5 @@ main() {
     echo "Specify either 'create' to create a new repo or 'update' to update your changes"
   fi
 }
-
 # Call the main function
 main "$1"
