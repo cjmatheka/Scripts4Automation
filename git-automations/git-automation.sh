@@ -13,6 +13,7 @@ source gitRepoDelete.sh
 source createRemoteRepo.sh
 source pushingToRemote.sh
 source checkGitRepo.sh
+source cloneRepository.sh
 
 # Main function to execute the script
 main() {
@@ -25,6 +26,11 @@ main() {
     check_and_configure_git
     create_github_repo
 
+  elif [ "$ACTION" = "clone" ];
+  then
+    echo "Cloning repository..."
+    clone_repository
+
   elif [ "$ACTION" = "update" ];
   then
     echo "Checking if its a repository..."
@@ -34,8 +40,8 @@ main() {
 
   elif [ "$ACTION" = "delete" ];
   then
-    echo "This action is irreversible"
-    echo "Deleting repository. You will be asked to confirm"
+    echo "This action is irreversible. You will be asked to confirm."
+    echo "Deleting the repository...."
     removeRepoDir
 
   else

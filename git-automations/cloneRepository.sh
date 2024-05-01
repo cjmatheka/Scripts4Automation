@@ -9,8 +9,8 @@ error_exit() {
 # Function to clone a Git repository
 clone_repository() {
   # Get the repository name as an argument
-  local REPO_NAME="$1"
-
+  read -r -p "Enter Repository to Clone " REPO_NAME
+  
   # Check if the repository name is empty
   if [ -z "$REPO_NAME" ];
   then
