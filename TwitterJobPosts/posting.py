@@ -4,20 +4,29 @@ from dotenv import load_dotenv
 import os
 import tweepy
 
+
 # Load environment variables from .env
 load_dotenv()
 
-# Authenticate to Twitter
-# Authenticate to Twitter
-auth = tweepy.OAuthHandler(
-    os.getenv("API_KEY"),
-    os.getenv("API_SECRET_KEY")
-)
+consumer_key = os.environ.get("API_KEY")
+consumer_secret = os.environ.get("API_SECRET_KEY")
+access_token = os.environ.get("ACCESS_TOKEN")
+access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
-auth.set_access_token(
-    os.getenv("ACCESS_TOKEN"),
-    os.getenv("ACCESS_TOKEN_SECRET")
-)
+# def post_to_twitter(jobs):
+#     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+#     auth.set_access_token(access_token, access_token_secret)
+#     api = tweepy.API(auth)
+#
+#     for job in jobs:
+#         tweet = f"New Job: {job['title']} at {job['company']} - {job['link']}"
+#         api.update_status(tweet)
+
+
+# Authenticate to Twitter
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
+auth.set_access_token(access_token, access_token_secret)
 
 
 # Create an API Object

@@ -54,4 +54,7 @@ def scrapping_data():
                 {'title': job_title, 'company': company, 'link': job_link, 'qualification': job_qualification,
                  'Locale': job_locale, 'field': job_fields, 'Date Posted': date_posted})
 
+            for job_post in job_posts:
+                
+
     return job_posts
